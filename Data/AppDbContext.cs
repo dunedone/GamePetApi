@@ -8,6 +8,7 @@ namespace GamePetApi.Data
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options) { }
 
+        public DbSet<TeamMember> Team { get; set; }
         public DbSet<VideoGame> VideoGames { get; set; }
         public DbSet<Pet> Pets { get; set; }
     }
