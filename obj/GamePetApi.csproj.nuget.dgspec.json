@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aaden\\source\\repos\\GamePetApi\\GamePetApi\\GamePetApi.csproj": {}
+    "C:\\Users\\draqo\\OneDrive - University of Cincinnati\\25-Summer\\Contemporary Programming\\repos\\GamePetApi\\GamePetApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aaden\\source\\repos\\GamePetApi\\GamePetApi\\GamePetApi.csproj": {
+    "C:\\Users\\draqo\\OneDrive - University of Cincinnati\\25-Summer\\Contemporary Programming\\repos\\GamePetApi\\GamePetApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aaden\\source\\repos\\GamePetApi\\GamePetApi\\GamePetApi.csproj",
+        "projectUniqueName": "C:\\Users\\draqo\\OneDrive - University of Cincinnati\\25-Summer\\Contemporary Programming\\repos\\GamePetApi\\GamePetApi.csproj",
         "projectName": "GamePetApi",
-        "projectPath": "C:\\Users\\Aaden\\source\\repos\\GamePetApi\\GamePetApi\\GamePetApi.csproj",
-        "packagesPath": "C:\\Users\\Aaden\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aaden\\source\\repos\\GamePetApi\\GamePetApi\\obj\\",
+        "projectPath": "C:\\Users\\draqo\\OneDrive - University of Cincinnati\\25-Summer\\Contemporary Programming\\repos\\GamePetApi\\GamePetApi.csproj",
+        "packagesPath": "C:\\Users\\draqo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\draqo\\OneDrive - University of Cincinnati\\25-Summer\\Contemporary Programming\\repos\\GamePetApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aaden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\draqo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,15 +50,31 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.7, )"
+              "version": "[8.0.18, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.7, )"
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[1.6.24, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.4.0, )"
             }
           },
           "imports": [
@@ -80,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
