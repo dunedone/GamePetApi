@@ -2,11 +2,11 @@
 {
     public class Pet
     {
-        public required int Id { get; set; }
-        public required string Name { get; set; }
-        public required string Species { get; set; }
-        public required string Gender { get; set; }
-        public required DateTime BirthDate { get; set; }
-        public required string OwnerName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Species { get; set; }
+        public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string OwnerName { get; set; }
     }
 }

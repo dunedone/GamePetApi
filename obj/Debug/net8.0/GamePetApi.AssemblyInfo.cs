@@ -11,11 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c2dae077-ea11-45eb-a2db-4f1899c409a4")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("GamePetApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76c919de12b36056c0b78bc32beb92e5c123be39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GamePetApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GamePetApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

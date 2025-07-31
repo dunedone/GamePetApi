@@ -2,11 +2,11 @@
 {
     public class VideoGame
     {
-        public required int Id { get; set; }
-        public required string Title { get; set; }
-        public required int YearReleased { get; set; }
-        public required string Developer { get; set; }
-        public required string Genre { get; set; }
-        public required string Platform { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int YearReleased { get; set; }
+        public string Developer { get; set; }
+        public string Genre { get; set; }
+        public string Platform { get; set; }
     }
 }
