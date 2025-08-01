@@ -36,9 +36,13 @@ public class GamesController : ControllerBase
     [HttpGet("getgamebyid")] //Read
     public IActionResult GetById(int id)
     {
-        var game = _context.GetItemById(id);
-        if (game is null) return NotFound("Video game of ID " + id + " does not exist.");
-        return Ok(game);
+        if (id > 0)
+        {
+            var game = _context.GetItemById(id);
+            if (game is null) return NotFound("Video game of ID " + id + " does not exist.");
+            return Ok(game);
+        }
+        return Ok(_context.GetFirstFiveItems());
     }
 
     [HttpPut("updategame")] //Update

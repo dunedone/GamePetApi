@@ -40,7 +40,6 @@ namespace GamePetApi.Data
 
         public TeamMember GetItemById(int id)
         {
-            if (id == 0 || id == null) GetFirstFiveItems();
             return _context.Team.Where(m => m.Id == id).FirstOrDefault();
         }
 

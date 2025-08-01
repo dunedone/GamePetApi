@@ -40,7 +40,6 @@ namespace GamePetApi.Data
 
         public VideoGame GetItemById(int id)
         {
-            if (id == 0 || id == null) GetFirstFiveItems();
             return _context.Games.Where(m => m.Id == id).FirstOrDefault();
         }
 

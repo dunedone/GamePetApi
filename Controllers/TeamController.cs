@@ -36,9 +36,13 @@ public class TeamController : ControllerBase
     [HttpGet("getmemberbyid")] //Read
     public IActionResult GetById(int id)
     {
-        var member = _context.GetItemById(id);
-        if (member is null) return NotFound("Team member of ID " + id + " does not exist.");
-        return Ok(member);
+        if (id > 0)
+        {
+            var member = _context.GetItemById(id);
+            if (member is null) return NotFound("Team member of ID " + id + " does not exist.");
+            return Ok(member);
+        }
+        return Ok(_context.GetFirstFiveItems());
     }
 
     [HttpPut("updatemember")] //Update
