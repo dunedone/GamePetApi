@@ -9,8 +9,23 @@ namespace GamePetApi.Data
         public TeamContext(DbContextOptions<TeamContext> options)
             : base(options) 
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            try
+            {
+                var temp = Team.Count();
+            }
+            catch
+            {
+                try
+                {
+                    Database.EnsureCreated();
+                    var temp = Team.Count();
+                }
+                catch
+                {
+                    Database.EnsureDeleted();
+                    Database.EnsureCreated();
+                }
+            }
             Database.Migrate(); 
         }
 
