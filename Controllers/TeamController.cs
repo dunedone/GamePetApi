@@ -22,8 +22,9 @@ public class TeamController : ControllerBase
     public IActionResult Post(TeamMember member)
     {
         var result = _context.AddItem(member);
-        if (result != 0) return StatusCode(500, "An error occurred while attempting to add " + member.FirstName + " " + member.LastName + " to the database.");
-        return Ok(member.FirstName + " " + member.LastName + " added to database.");
+        if (result > 0) return StatusCode(500, "An error occurred while attempting to add " + member.FirstName + " " + member.LastName + " to the database: There is/are " + result + " existing team member(s) with those parameters.");
+        if (result < 0) return StatusCode(500, "An error occurred while attempting to add " + member.FirstName + " " + member.LastName + " to the database.");
+        return Ok(member.FirstName + " " + member.LastName + " (ID" + member.Id + ") added to database.");
     }
 
     [HttpGet("getallmembers")] //Read

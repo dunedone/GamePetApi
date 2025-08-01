@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Register the AppDbContext with EF Core using the connection string
 builder.Services.AddDbContext<TeamContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<GamesContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container
 builder.Services.AddControllers();
@@ -15,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApiDocument();
 
 builder.Services.AddScoped<ICRUDDAO<TeamMember>, TeamContextDAO>();
+builder.Services.AddScoped<ICRUDDAO<VideoGame>, GamesContextDAO>();
 
 var app = builder.Build();
 

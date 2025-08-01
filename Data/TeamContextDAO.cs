@@ -14,10 +14,10 @@ namespace GamePetApi.Data
 
         public int? AddItem(TeamMember member)
         {
-            var duplicateMembers = _context.Team.Where(m => m.FirstName == member.FirstName && m.LastName == member.LastName && m.BirthDate == member.BirthDate).ToList();
+            var duplicateMembers = _context.Team.Where(m => m.FirstName == member.FirstName && m.LastName == member.LastName && m.BirthDate == member.BirthDate && m.Program == member.Program && m.Year == member.Year).ToList();
             try
             {
-                if (duplicateMembers.Any())
+                if (!duplicateMembers.Any())
                 {
                     _context.Team.Add(member);
                     _context.SaveChanges();
