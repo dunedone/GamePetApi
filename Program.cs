@@ -10,6 +10,8 @@ builder.Services.AddDbContext<TeamContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<GamesContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<PetsContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container
 builder.Services.AddControllers();
@@ -18,6 +20,7 @@ builder.Services.AddOpenApiDocument();
 
 builder.Services.AddScoped<ICRUDDAO<TeamMember>, TeamContextDAO>();
 builder.Services.AddScoped<ICRUDDAO<VideoGame>, GamesContextDAO>();
+builder.Services.AddScoped<ICRUDDAO<Pet>, PetsContextDAO>();
 
 var app = builder.Build();
 

@@ -7,7 +7,7 @@ namespace GamePetApi.Interfaces
         int? AddItem(T item);
         List<T> GetAllItems();
         List<T> GetFirstFiveItems();
-        T GetItemById(int id);
+        T? GetItemById(int id);
         int? RemoveItemById(int id);
         int? UpdateItem(T item);
     }
