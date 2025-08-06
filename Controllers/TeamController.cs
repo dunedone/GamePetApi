@@ -24,7 +24,7 @@ public class TeamController : ControllerBase
         var result = _context.AddItem(member);
         if (result > 0) return StatusCode(500, "An error occurred while attempting to add " + member.FirstName + " " + member.LastName + " to the database: There is/are " + result + " existing team member(s) with those parameters.");
         if (result < 0) return StatusCode(500, "An error occurred while attempting to add " + member.FirstName + " " + member.LastName + " to the database.");
-        return Ok(member.FirstName + " " + member.LastName + " (ID" + member.Id + ") added to database.");
+        return Ok(member.FirstName + " " + member.LastName + " (ID " + member.Id + ") added to database.");
     }
 
     [HttpGet("getallmembers")] //Read
@@ -34,15 +34,13 @@ public class TeamController : ControllerBase
     }
 
     [HttpGet("getmemberbyid")] //Read
-    public IActionResult GetById(int id)
+    public IActionResult GetById(int? id)
     {
-        if (id > 0)
-        {
-            var member = _context.GetItemById(id);
-            if (member is null) return NotFound("Team member of ID " + id + " does not exist.");
-            return Ok(member);
-        }
-        return Ok(_context.GetFirstFiveItems());
+        if (id is null || id == 0) return Ok(_context.GetFirstFiveItems());
+        var member = _context.GetItemById((int)id);
+        if (member is null) return NotFound("There is no team member at ID " + id + ".");
+        return Ok(member);
+        
     }
 
     [HttpPut("updatemember")] //Update

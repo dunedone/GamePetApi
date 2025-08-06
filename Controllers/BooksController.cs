@@ -36,15 +36,12 @@ namespace GamePetApi.Controllers
         
         // Read
         [HttpGet("getbookbyid")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(int? id)
         {
-            if (id > 0)
-            {
-                var book = _context.GetItemById(id);
-                if (book is null) return NotFound("Book of ID " + id + " does not exist.");
-                return Ok(book);
-            }
-            return Ok(_context.GetFirstFiveItems());
+            if (id is null || id == 0) return Ok(_context.GetFirstFiveItems());
+            var book = _context.GetItemById((int)id);
+            if (book is null) return NotFound("There is no book at ID " + id + ".");
+            return Ok(book);
         }
 
         // Update

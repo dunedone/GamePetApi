@@ -34,15 +34,12 @@ public class GamesController : ControllerBase
     }
 
     [HttpGet("getgamebyid")] //Read
-    public IActionResult GetById(int id)
+    public IActionResult GetById(int? id)
     {
-        if (id > 0)
-        {
-            var game = _context.GetItemById(id);
-            if (game is null) return NotFound("Video game of ID " + id + " does not exist.");
-            return Ok(game);
-        }
-        return Ok(_context.GetFirstFiveItems());
+        if (id is null || id == 0) return Ok(_context.GetFirstFiveItems());
+        var game = _context.GetItemById((int)id);
+        if (game is null) return NotFound("There is no video game at ID " + id + ".");
+        return Ok(game);
     }
 
     [HttpPut("updategame")] //Update
@@ -60,7 +57,7 @@ public class GamesController : ControllerBase
         var result = _context.RemoveItemById(id);
         if (result is null) return NotFound("Video game of ID " + id + " does not exist.");
         if (result != 0) return StatusCode(500, "An error occurred while attempting to delete video game of ID " + id + ").");
-        return Ok("Video game of ID " + id + ") removed.");
+        return Ok("Video game of ID " + id + " removed.");
     }
         
 }
