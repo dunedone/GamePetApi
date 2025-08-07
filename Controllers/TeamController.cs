@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using GamePetApi.Models;
 using GamePetApi.Interfaces;
-using System.Runtime.CompilerServices;
 
 namespace GamePetApi.Controllers;
 

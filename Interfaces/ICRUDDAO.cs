@@ -1,5 +1,3 @@
-using GamePetApi.Models;
-
 namespace GamePetApi.Interfaces
 {
     public interface ICRUDDAO<T>
